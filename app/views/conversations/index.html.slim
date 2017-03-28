@@ -1,0 +1,6 @@
+h1 My chats
+
+div
+  - @conversations.each do |c|
+    p
+      = link_to c.id, user_conversation_path(current_user, c)

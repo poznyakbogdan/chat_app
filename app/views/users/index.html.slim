@@ -1,0 +1,32 @@
+h1 List of users
+
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Controls</th>
+    </tr>
+  </thead>
+  <tbody>
+    - @users.each_with_index  do |u, i|
+      <tr>
+        <th scope="row">
+          = i + 1
+        </th>
+        <td>
+          = u.name
+        </td>
+        <td>
+          = u.email
+        </td>
+        <td>
+          = link_to "Create", user_conversations_path(u), method: :post
+        </td>
+      </tr>
+
+  </tbody>
+</table>
+
+= link_to "My chats", user_conversations_path(current_user)
