@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :users do
-    resources :conversations
+  resources :users
+
+  resources :conversations do
+    resources :messages
   end
 end

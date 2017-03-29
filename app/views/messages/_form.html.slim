@@ -1,0 +1,6 @@
+= form_tag("/conversations/#{conversation.id}/messages", method: "post") do
+  div.form-group
+    = label_tag :body, "Text"
+    = text_area_tag :body, "", class: "form-control"
+
+  = submit_tag "Send"

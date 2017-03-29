@@ -7,12 +7,12 @@ class ConversationsController < ApplicationController
 
   def create
     @conversation = Conversation.new
-    @user = User.find(params[:user_id])
+    @user = User.find(get_user_id)
     if @user.id != current_user.id
       @conversation.save
       @user.conversations << @conversation
       current_user.conversations << @conversation
-      redirect_to user_conversation_path(current_user, @conversation)
+      redirect_to conversation_path @conversation
     else
       flash[:danger] = "Can't create chat with yourself"
       redirect_to users_path
@@ -20,7 +20,7 @@ class ConversationsController < ApplicationController
   end
 
   def show
-
+    @conversation = Conversation.where(id: params[:id]).eager_load(:messages).first
   end
 
   def destroy
@@ -31,4 +31,7 @@ class ConversationsController < ApplicationController
 
   end
 
+  def get_user_id
+    params[:conversation][:user_id]
+  end
 end

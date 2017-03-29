@@ -22,11 +22,13 @@ h1 List of users
           = u.email
         </td>
         <td>
-          = link_to "Create", user_conversations_path(u), method: :post
+          = form_for(:conversation, url: conversations_path) do |f|
+            = f.hidden_field :user_id, :value => u.id
+            = f.submit "Create"
         </td>
       </tr>
 
   </tbody>
 </table>
 
-= link_to "My chats", user_conversations_path(current_user)
+= link_to "My chats", conversations_path
