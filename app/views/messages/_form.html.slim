@@ -1,6 +1,6 @@
-= form_tag("/conversations/#{conversation.id}/messages", method: "post") do
+= form_tag("/conversations/#{conversation.id}/messages", method: "post", remote: true) do
   div.form-group
-    = label_tag :body, "Text"
+    = label_tag :body, "Text of message"
     = text_area_tag :body, "", class: "form-control"
 
-  = submit_tag "Send"
+  = submit_tag "Send", class: "btn btn-primary send-message-button"

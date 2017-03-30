@@ -2,5 +2,4 @@ h1 My chats
 
 div
   - @conversations.each do |c|
-    p
-      = link_to c.id, conversation_path(c)
+    = link_to conversation_name(c), conversation_path(c), class: "conversation-index-link alert alert-success"

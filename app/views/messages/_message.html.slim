@@ -1,0 +1,9 @@
+<div class="message_container type-#{message_type}">
+  <div class="alert alert-#{message_type} message_margin">
+    = message.body
+  </div>
+
+  <small class="text-muted message_time">
+    = message.created_at.to_s(:ru_datetime)
+  </small>
+</div>

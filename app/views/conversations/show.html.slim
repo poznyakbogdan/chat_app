@@ -1,6 +1,7 @@
-h1 = "Conversation _#{@conversation.id}"
+h1 = conversation_name @conversation
 
 div.conversation-messages-container
   -@conversation.messages.each do |m|
-    p = m.body
-= render 'messages/form', :conversation => @conversation
+    = show_message m
+div.conversation-footer
+  = render 'messages/form', :conversation => @conversation

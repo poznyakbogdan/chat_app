@@ -9,4 +9,8 @@ h1 Log in
     = f.label :password
     = f.password_field :password, class: 'form-control'
 
-  = f.submit "Log in"
+  = f.submit "Log in", class: "btn btn-primary"
+
+  span.sign_up_supply
+    | or
+  = link_to "Sign up", new_user_path, class: "btn btn-success"

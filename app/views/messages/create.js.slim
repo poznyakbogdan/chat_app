@@ -1,0 +1,14 @@
+| var message = $(`
+  <div class="message_container type-warning">
+    <div class="alert alert-warning message_margin">
+      #{@message.body}
+    </div>
+    <small class="text-muted message_time">
+      #{@message.created_at.to_s(:ru_datetime)}
+    </small>
+  </div>
+|`);
+| $("textarea#body").val("");
+| $('.conversation-messages-container').append(message);
+| $('.conversation-messages-container').scrollTop(9999);
+

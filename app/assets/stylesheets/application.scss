@@ -17,3 +17,52 @@
 
 @import "bootstrap";
 @import "font-awesome";
+
+
+.message_container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.type-warning{
+  justify-content: flex-end;
+  small{
+    text-align: right;
+  }
+}
+.type-info{
+  justify-content: flex-start;
+}
+.conversation-messages-container{
+  height: 60vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 10px 20px;
+}
+.conversation-footer {
+  height: 20vh;
+}
+.conversation-index-link{
+  display: block;
+  width: 100%;
+}
+.conversation-index-link:hover{
+  text-decoration: none;
+}
+nav{
+  margin-bottom: 20px;
+}
+.message_time{
+  width: 100%;
+  margin-bottom: 10px;
+}
+.message_margin{
+  margin-bottom: 3px;
+}
+.send-message-button{
+  width: 100%;
+}
+.sign_up_supply{
+  display: inline-block;
+  margin: 0px 5px;
+}
